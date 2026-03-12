@@ -34,12 +34,15 @@
     }
 
     .nav-logo {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
       text-decoration: none;
-      color: var(--black);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -346,7 +349,9 @@
 
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo">MT.SERVICES</a>
+    <a href="/" class="nav-logo">
+      <img src="logo.png" alt="MT.SERVICES">
+    </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
@@ -487,7 +492,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 MT.SERVICES</p>
+    <img src="logo.png" alt="MT.SERVICES" style="height:28px;width:auto;opacity:0.5;">
     <p>Bozeman, Montana</p>
   </footer>
 
