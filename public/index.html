@@ -34,12 +34,14 @@
     }
 
     .nav-logo {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
       text-decoration: none;
-      color: var(--black);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
     }
 
     .nav-links {
@@ -347,7 +349,12 @@
 
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo">MT.SERVICES</a>
+    <a href="/" class="nav-logo">
+      <picture>
+        <source srcset="logo.webp" type="image/webp">
+        <img src="logo-400.png" alt="MT.SERVICES" height="32">
+      </picture>
+    </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
