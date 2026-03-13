@@ -1,10 +1,14 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "public/logo.png"],
     "headers": [
       {
         "source": "**/*.png",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      },
+      {
+        "source": "**/*.webp",
         "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
       }
     ]
