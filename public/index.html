@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MT.SERVICES — Software & E-Commerce Consulting</title>
-  <meta name="description" content="Montana-based software consulting. Shopify/Hydrogen storefronts, DevOps, cloud infrastructure, and e-commerce performance optimization.">
+  <title>MT.SERVICES — SRE & Platform Engineering Consulting</title>
+  <meta name="description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -140,6 +140,41 @@
     }
 
     /* ── SERVICES ── */
+    .service-featured {
+      background: var(--light);
+      padding: 2.5rem;
+      margin-bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-featured .service-num {
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .service-featured h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-featured p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-featured .service-tags {
+      margin-top: 0;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -335,6 +370,7 @@
       .nav-links { gap: 1.25rem; }
       .hero { padding: 3.5rem 1.25rem 3rem; }
       .section { padding: 3.5rem 1.25rem; }
+      .service-featured { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
       .service { border-right: none; border-bottom: 1px solid var(--border); padding: 1.75rem 0; }
       .approach-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -365,10 +401,10 @@
   <!-- HERO -->
   <section class="hero">
     <p class="hero-label">Montana-Based Software Consulting</p>
-    <h1>Engineering that <strong>ships</strong> and<br>storefronts that <strong>convert.</strong></h1>
+    <h1>Agentic engineering.<br><strong>Real infrastructure.</strong><br>Software that <strong>ships.</strong></h1>
     <p class="hero-sub">
-      Full-stack development and DevOps consulting for e-commerce brands,
-      startups, and teams that need to move fast without breaking things.
+      AI tooling, SRE, and platform engineering consulting — from LLM-powered
+      developer workflows to the cloud infrastructure that runs them.
     </p>
     <a href="#contact" class="btn">Get in touch</a>
     <a href="#services" class="btn btn-ghost">What we do</a>
@@ -378,41 +414,70 @@
   <section class="section" id="services">
     <div class="section-inner">
       <p class="section-label">Services</p>
+
+      <div class="service-featured">
+        <div>
+          <p class="service-num">01</p>
+          <h3>AI & Agentic Engineering</h3>
+          <p>Design and build LLM-powered tooling that engineers actually use — Slack-based AI agents with real integrations, CI/CD pipeline agents that gate and review code automatically, and agentic workflows orchestrated via MCP across your existing stack.</p>
+          <p>Experienced leading AI tooling transitions at scale: security auditing, developer rollout, and custom observability dashboards to track usage and ROI across the organization.</p>
+        </div>
+        <div>
+          <div class="service-tags">
+            <span class="tag">MCP</span>
+            <span class="tag">LLM Orchestration</span>
+            <span class="tag">Claude / OpenAI</span>
+            <span class="tag">Agentic Workflows</span>
+            <span class="tag">Claude Code</span>
+            <span class="tag">Cursor</span>
+            <span class="tag">CI/CD Agents</span>
+            <span class="tag">ChatOps</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+        </div>
+      </div>
+
       <div class="services-grid">
 
         <div class="service">
-          <p class="service-num">01</p>
-          <h3>E-Commerce Development</h3>
-          <p>Shopify Hydrogen storefronts built for conversion. Vehicle-specific product finders, custom checkout flows, and performance-first architecture that replaces bloated Liquid themes.</p>
-          <div class="service-tags">
-            <span class="tag">Hydrogen</span>
-            <span class="tag">React</span>
-            <span class="tag">Shopify</span>
-            <span class="tag">TypeScript</span>
-          </div>
-        </div>
-
-        <div class="service">
           <p class="service-num">02</p>
-          <h3>DevOps & Cloud Infrastructure</h3>
-          <p>CI/CD pipelines, containerized deployments, and cloud infrastructure on GCP and Firebase. Built to be maintainable by your team, not a mystery box that only we can touch.</p>
+          <h3>Site Reliability Engineering</h3>
+          <p>SLI/SLO definition, observability pipelines, incident runbooks, and reliability standards for platforms that can't afford downtime. CI/CD, containerized deployments, and IaC built to be owned by your team.</p>
           <div class="service-tags">
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">AWS</span>
             <span class="tag">GCP</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Docker</span>
-            <span class="tag">GitHub Actions</span>
+            <span class="tag">Datadog</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">ArgoCD</span>
           </div>
         </div>
 
         <div class="service">
           <p class="service-num">03</p>
-          <h3>Performance & Conversion</h3>
-          <p>Core Web Vitals audits, storefront speed optimization, and conversion funnel analysis. We find where customers drop off and fix it — with code, not guesswork.</p>
+          <h3>Platform & Developer Experience</h3>
+          <p>Internal developer platforms, self-service infrastructure, and Golden Path templates that let teams ship without waiting on ops. Backstage, automated onboarding, and the tooling that collapses the gap between code and production.</p>
           <div class="service-tags">
-            <span class="tag">Web Vitals</span>
-            <span class="tag">SEO</span>
-            <span class="tag">Analytics</span>
-            <span class="tag">A/B Testing</span>
+            <span class="tag">Backstage</span>
+            <span class="tag">Go</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Self-service IaC</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+        </div>
+
+        <div class="service">
+          <p class="service-num">04</p>
+          <h3>Automation & Integration</h3>
+          <p>SaaS API integrations, event-driven orchestration, identity and access automation — and custom microservices when off-the-shelf tools don't cut it. Built in Go or Python to be fast, testable, and maintainable.</p>
+          <div class="service-tags">
+            <span class="tag">REST APIs</span>
+            <span class="tag">OAuth 2.0</span>
+            <span class="tag">SAML</span>
+            <span class="tag">Go</span>
+            <span class="tag">Python</span>
+            <span class="tag">Serverless</span>
           </div>
         </div>
 
@@ -430,8 +495,8 @@
         </div>
         <div class="approach-right">
           <p>You work with the engineer, not a project coordinator who relays messages to someone else. Every engagement is scoped honestly — if something isn't the right fit, we'll tell you.</p>
-          <p>Montana-based and remote-first. Available across US time zones. Experienced working with small teams, bootstrapped operators, and funded startups alike.</p>
-          <p>Specialization in Shopify e-commerce means we bring domain patterns that a generalist agency won't have — vehicle selectors, paint-matching UX, catalog architecture for large SKU counts, and conversion flows built around how buyers actually shop.</p>
+          <p>Montana-based and remote-first. Available across US time zones. Experienced embedded with small teams, funded startups, and larger engineering orgs that need a senior IC without the overhead of a full hire.</p>
+          <p>15 years of infrastructure and platform work — including hands-on agentic AI engineering in production, not just evaluating tools. MCP integrations, CI coding agents, and developer AI rollouts at the org level.</p>
         </div>
       </div>
     </div>
@@ -443,9 +508,9 @@
       <p class="section-label">Work</p>
       <div class="case-study">
         <div>
-          <p class="case-label">E-Commerce — In Progress</p>
-          <h3>ABC Paints — Shopify Hydrogen Rebuild</h3>
-          <p>Full storefront rebuild for a specialty automotive paint retailer. Replacing a default Liquid theme with a Hydrogen/React storefront featuring a vehicle Year/Make/Model selector, Complete Kit bundling, and optimized product pages. Targeting a conversion rate improvement from 1.06% to 2.0%+.</p>
+          <p class="case-label">Full-Stack — In Progress</p>
+          <h3>ABC Paints — Performance Storefront Rebuild</h3>
+          <p>Ground-up React/TypeScript application for a specialty automotive paint retailer. Custom vehicle Year/Make/Model selector, product bundling logic, and a performance-first architecture replacing a slow legacy storefront. Targeting a conversion rate improvement from 1.06% to 2.0%+.</p>
         </div>
         <div class="case-metrics">
           <div class="metric">
@@ -472,7 +537,7 @@
       <div class="contact-grid">
         <div class="contact-left">
           <h2>Let's talk about<br><strong>what you're building.</strong></h2>
-          <p>Whether you need a Shopify storefront, a DevOps overhaul, or a second opinion on an architecture decision — reach out and we'll figure out if there's a fit.</p>
+          <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and we'll figure out if there's a fit.</p>
           <a href="mailto:hello@mt.services" class="btn">hello@mt.services</a>
         </div>
         <div>
