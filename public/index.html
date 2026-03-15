@@ -144,10 +144,6 @@
       background: var(--light);
       padding: 2.5rem;
       margin-bottom: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
       border-bottom: 1px solid var(--border);
     }
 
@@ -169,6 +165,17 @@
       color: var(--gray);
       line-height: 1.65;
       margin-bottom: 1.25rem;
+    }
+
+    .service-featured-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-featured-body p {
+      margin-bottom: 0;
     }
 
     .service-featured .service-tags {
@@ -370,7 +377,7 @@
       .nav-links { gap: 1.25rem; }
       .hero { padding: 3.5rem 1.25rem 3rem; }
       .section { padding: 3.5rem 1.25rem; }
-      .service-featured { grid-template-columns: 1fr; }
+      .service-featured-body { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
       .service { border-right: none; border-bottom: 1px solid var(--border); padding: 1.75rem 0; }
       .approach-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -416,24 +423,22 @@
       <p class="section-label">Services</p>
 
       <div class="service-featured">
-        <div>
-          <p class="service-num">01</p>
-          <h3>AI & Agentic Engineering</h3>
+        <p class="service-num">01</p>
+        <h3>AI & Agentic Engineering</h3>
+        <div class="service-featured-body">
           <p>Design and build LLM-powered tooling that engineers actually use — Slack-based AI agents with real integrations, CI/CD pipeline agents that gate and review code automatically, and agentic workflows orchestrated via MCP across your existing stack.</p>
           <p>Experienced leading AI tooling transitions at scale: security auditing, developer rollout, and custom observability dashboards to track usage and ROI across the organization.</p>
         </div>
-        <div>
-          <div class="service-tags">
-            <span class="tag">MCP</span>
-            <span class="tag">LLM Orchestration</span>
-            <span class="tag">Claude / OpenAI</span>
-            <span class="tag">Agentic Workflows</span>
-            <span class="tag">Claude Code</span>
-            <span class="tag">Cursor</span>
-            <span class="tag">CI/CD Agents</span>
-            <span class="tag">ChatOps</span>
-            <span class="tag">Prompt Engineering</span>
-          </div>
+        <div class="service-tags">
+          <span class="tag">MCP</span>
+          <span class="tag">LLM Orchestration</span>
+          <span class="tag">Claude / OpenAI</span>
+          <span class="tag">Agentic Workflows</span>
+          <span class="tag">Claude Code</span>
+          <span class="tag">Cursor</span>
+          <span class="tag">CI/CD Agents</span>
+          <span class="tag">ChatOps</span>
+          <span class="tag">Prompt Engineering</span>
         </div>
       </div>
 
@@ -538,12 +543,12 @@
         <div class="contact-left">
           <h2>Let's talk about<br><strong>what you're building.</strong></h2>
           <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and we'll figure out if there's a fit.</p>
-          <a href="mailto:hello@mt.services" class="btn">hello@mt.services</a>
+          <a href="mailto:joe@swantron.com" class="btn">Get in touch</a>
         </div>
         <div>
           <div class="contact-detail">
             <span>Email</span>
-            <a href="mailto:hello@mt.services">hello@mt.services</a>
+            <a href="mailto:joe@swantron.com">joe@swantron.com</a>
           </div>
           <div class="contact-detail" style="margin-top: 1.5rem;">
             <span>Location</span>
