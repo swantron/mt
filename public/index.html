@@ -258,6 +258,12 @@
     }
 
     /* ── WORK / CASE STUDY ── */
+    .case-studies {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
     .case-study {
       background: var(--light);
       padding: 2.5rem;
@@ -309,6 +315,63 @@
       color: var(--gray);
       letter-spacing: 0.05em;
     }
+
+    /* ── PERSONAL PROJECTS ── */
+    .projects-header {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .project-card {
+      padding: 1.75rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .project-card:last-child { border-right: none; }
+
+    .project-meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-card p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .project-link {
+      font-size: 0.8rem;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+
+    .project-link:hover { opacity: 0.5; }
 
     /* ── CONTACT ── */
     .contact-grid {
@@ -382,6 +445,9 @@
       .service { border-right: none; border-bottom: 1px solid var(--border); padding: 1.75rem 0; }
       .approach-grid { grid-template-columns: 1fr; gap: 2rem; }
       .case-study { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .project-card:last-child { border-bottom: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
       .btn-ghost { margin-left: 0; margin-top: 0.75rem; }
@@ -407,14 +473,14 @@
 
   <!-- HERO -->
   <section class="hero">
-    <p class="hero-label">Montana-Based Software Consulting</p>
+    <p class="hero-label">Joe Swanson — Software Consulting</p>
     <h1>Agentic engineering.<br><strong>Real infrastructure.</strong><br>Software that <strong>ships.</strong></h1>
     <p class="hero-sub">
-      AI tooling, SRE, and platform engineering consulting — from LLM-powered
-      developer workflows to the cloud infrastructure that runs them.
+      I'm a staff-level engineer with 15 years in platform engineering, SRE, and AI tooling.
+      I embed with your team, own the problem, and deliver — without the overhead of a full-time hire.
     </p>
     <a href="#contact" class="btn">Get in touch</a>
-    <a href="#services" class="btn btn-ghost">What we do</a>
+    <a href="#services" class="btn btn-ghost">What I do</a>
   </section>
 
   <!-- SERVICES -->
@@ -496,12 +562,12 @@
       <p class="section-label">Approach</p>
       <div class="approach-grid">
         <div class="approach-left">
-          <h2>Direct engagement.<br><strong>No account managers.</strong><br>No hand-offs.</h2>
+          <h2>You work with me.<br><strong>No account managers.</strong><br>No hand-offs.</h2>
         </div>
         <div class="approach-right">
-          <p>You work with the engineer, not a project coordinator who relays messages to someone else. Every engagement is scoped honestly — if something isn't the right fit, we'll tell you.</p>
-          <p>Montana-based and remote-first. Available across US time zones. Experienced embedded with small teams, funded startups, and larger engineering orgs that need a senior IC without the overhead of a full hire.</p>
-          <p>15 years of infrastructure and platform work — including hands-on agentic AI engineering in production, not just evaluating tools. MCP integrations, CI coding agents, and developer AI rollouts at the org level.</p>
+          <p>I'm Joe Swanson — a staff software engineer based in Bozeman, Montana. When you hire me, I'm the one doing the work. Every engagement is scoped honestly — if something isn't the right fit, I'll tell you.</p>
+          <p>I've been embedded across small teams, funded startups, and larger engineering orgs. I take ownership of outcomes, not just tasks — and I'm available for contract engagements on a project or retainer basis.</p>
+          <p>15 years of infrastructure and platform work, including hands-on agentic AI engineering in production — not just evaluating tools. MCP integrations, CI coding agents, and AI tooling rollouts at the org level.</p>
         </div>
       </div>
     </div>
@@ -511,26 +577,79 @@
   <section class="section" id="work">
     <div class="section-inner">
       <p class="section-label">Work</p>
-      <div class="case-study">
-        <div>
-          <p class="case-label">Full-Stack — In Progress</p>
-          <h3>ABC Paints — Performance Storefront Rebuild</h3>
-          <p>Ground-up React/TypeScript application for a specialty automotive paint retailer. Custom vehicle Year/Make/Model selector, product bundling logic, and a performance-first architecture replacing a slow legacy storefront. Targeting a conversion rate improvement from 1.06% to 2.0%+.</p>
+
+      <div class="case-studies">
+
+        <div class="case-study">
+          <div>
+            <p class="case-label">AI & Platform Engineering — Demandbase</p>
+            <h3>DevX Agent — AI-Powered Engineering Platform</h3>
+            <p>Built a centralized Slack-based AI agent integrating six internal platforms via Model Context Protocol — GitLab, Atlassian, Grafana, Backstage, Datadog, and EKS. Engineers query infrastructure state, trigger workflows, and get real-time insights through a natural language interface. Also engineered CI/CD coding agents that perform automated code review and quality gating on every merge request, and led the company-wide transition from GitHub Copilot to Cursor and Claude Code.</p>
+          </div>
+          <div class="case-metrics">
+            <div class="metric">
+              <div class="metric-value">6 platforms</div>
+              <div class="metric-label">Integrated via MCP into a single natural language interface</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">Day one</div>
+              <div class="metric-label">New services ship with CI/CD, tests, and monitoring via Golden Path templates</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">Org-wide</div>
+              <div class="metric-label">AI tooling transition owned end-to-end — rollout, security audit, observability</div>
+            </div>
+          </div>
         </div>
-        <div class="case-metrics">
-          <div class="metric">
-            <div class="metric-value">1.06% → 2%+</div>
-            <div class="metric-label">Conversion rate target</div>
+
+        <div class="case-study">
+          <div>
+            <p class="case-label">Full-Stack — In Progress</p>
+            <h3>ABC Paints — Performance Storefront Rebuild</h3>
+            <p>Ground-up React/TypeScript application for a specialty automotive paint retailer. Custom vehicle Year/Make/Model selector, product bundling logic, and a performance-first architecture replacing a slow legacy storefront. Targeting a conversion rate improvement from 1.06% to 2.0%+.</p>
           </div>
-          <div class="metric">
-            <div class="metric-value">52,438</div>
-            <div class="metric-label">Annual sessions — same traffic, better conversion</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">$50K+</div>
-            <div class="metric-label">Projected annual revenue uplift</div>
+          <div class="case-metrics">
+            <div class="metric">
+              <div class="metric-value">1.06% → 2%+</div>
+              <div class="metric-label">Conversion rate target</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">52,438</div>
+              <div class="metric-label">Annual sessions — same traffic, better conversion</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">$50K+</div>
+              <div class="metric-label">Projected annual revenue uplift</div>
+            </div>
           </div>
         </div>
+
+      </div>
+
+      <p class="projects-header">Personal Projects</p>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <p class="project-meta">Live — GCP Cloud Run</p>
+          <h4>chomptron.com</h4>
+          <p>AI-powered recipe generator built on Google Gemini. Serverless on Cloud Run — scales to zero, deploys via Cloud Build CI/CD. Caching, retry logic, and health endpoints built in.</p>
+          <a href="https://chomptron.com" class="project-link" target="_blank" rel="noopener">chomptron.com →</a>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Live — Next.js / Firebase</p>
+          <h4>wrenchtron.com</h4>
+          <p>Fleet maintenance tracker with Firestore, Firebase Auth, and Cloud Storage. Full PWA with offline support. No server — Firestore security rules handle all access control. Demo available, no login required.</p>
+          <a href="https://wrenchtron.com/demo" class="project-link" target="_blank" rel="noopener">wrenchtron.com/demo →</a>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Live — DigitalOcean / React</p>
+          <h4>tronswan.com</h4>
+          <p>Personal platform hub integrating Spotify, weather, MLB stats, a Hugo blog, and a Google Docs-backed resume. 93%+ test coverage with Vitest and Playwright. 457 commits of active development.</p>
+          <a href="https://tronswan.com" class="project-link" target="_blank" rel="noopener">tronswan.com →</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -542,7 +661,7 @@
       <div class="contact-grid">
         <div class="contact-left">
           <h2>Let's talk about<br><strong>what you're building.</strong></h2>
-          <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and we'll figure out if there's a fit.</p>
+          <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and I'll figure out if there's a fit.</p>
           <a href="mailto:joe@swantron.com" class="btn">Get in touch</a>
         </div>
         <div>
@@ -557,6 +676,14 @@
           <div class="contact-detail" style="margin-top: 1.5rem;">
             <span>Response time</span>
             Within one business day
+          </div>
+          <div class="contact-detail" style="margin-top: 1.5rem;">
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/joseph-swanson-11092758/" target="_blank" rel="noopener">linkedin.com/in/joseph-swanson</a>
+          </div>
+          <div class="contact-detail" style="margin-top: 1.5rem;">
+            <span>GitHub</span>
+            <a href="https://github.com/swantron" target="_blank" rel="noopener">github.com/swantron</a>
           </div>
         </div>
       </div>
