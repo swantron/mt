@@ -5,7 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MT.SERVICES — SRE & Platform Engineering Consulting</title>
   <meta name="description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
+  <link rel="canonical" href="https://mt.services">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mt.services">
+  <meta property="og:title" content="MT.SERVICES — SRE & Platform Engineering Consulting">
+  <meta property="og:description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
+  <meta property="og:image" content="https://mt.services/logo-400.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MT.SERVICES — SRE & Platform Engineering Consulting">
+  <meta name="twitter:description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
+  <meta name="twitter:image" content="https://mt.services/logo-400.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MT.SERVICES",
+    "description": "Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.",
+    "url": "https://mt.services",
+    "founder": {
+      "@type": "Person",
+      "name": "Joe Swanson",
+      "jobTitle": "Staff Software Engineer",
+      "email": "joe@swantron.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/joseph-swanson-11092758/",
+        "https://github.com/swantron"
+      ]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bozeman",
+      "addressRegion": "MT",
+      "addressCountry": "US"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": ["AI Engineering", "Site Reliability Engineering", "Platform Engineering", "Developer Experience"]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -14,7 +58,6 @@
       --gray:   #636e72;
       --light:  #f5f5f3;
       --border: #e0e0dc;
-      --accent: #1a1a1a;
     }
 
     body {
@@ -23,6 +66,22 @@
       color: var(--black);
       line-height: 1.6;
     }
+
+    /* ── SKIP LINK ── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--black);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      z-index: 100;
+      transition: top 0.1s;
+    }
+
+    .skip-link:focus { top: 1rem; }
 
     /* ── NAV ── */
     nav {
@@ -64,9 +123,8 @@
     .hero {
       max-width: 860px;
       margin: 0 auto;
-      padding: 5rem 2rem 5rem;
+      padding: 5rem 2rem;
     }
-
 
     .hero-label {
       font-size: 0.75rem;
@@ -97,6 +155,12 @@
       margin-bottom: 2.5rem;
     }
 
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .btn {
       display: inline-block;
       padding: 0.85rem 2rem;
@@ -116,7 +180,6 @@
       background: transparent;
       color: var(--black);
       border: 1px solid var(--black);
-      margin-left: 1rem;
     }
 
     /* ── SECTION WRAPPER ── */
@@ -397,18 +460,29 @@
       margin-bottom: 2rem;
     }
 
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+    }
+
     .contact-detail {
-      margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
 
-    .contact-detail span {
+    .contact-detail + .contact-detail {
+      margin-top: 1.5rem;
+    }
+
+    .contact-detail dt {
       color: var(--gray);
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      display: block;
       margin-bottom: 0.2rem;
+    }
+
+    .contact-detail dd {
+      margin: 0;
     }
 
     .contact-detail a {
@@ -450,14 +524,15 @@
       .project-card:last-child { border-bottom: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .btn-ghost { margin-left: 0; margin-top: 0.75rem; }
     }
   </style>
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- NAV -->
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="/" class="nav-logo">
       <picture>
         <source srcset="logo.webp" type="image/webp">
@@ -466,207 +541,216 @@
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="hero-label">Joe Swanson — Software Consulting</p>
-    <h1>Agentic engineering.<br><strong>Real infrastructure.</strong><br>Software that <strong>ships.</strong></h1>
-    <p class="hero-sub">
-      I'm a staff-level engineer with 15 years in platform engineering, SRE, and AI tooling.
-      I embed with your team, own the problem, and deliver — without the overhead of a full-time hire.
-    </p>
-    <a href="#contact" class="btn">Get in touch</a>
-    <a href="#services" class="btn btn-ghost">What I do</a>
-  </section>
+  <main id="main-content">
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <div class="section-inner">
-      <p class="section-label">Services</p>
-
-      <div class="service-featured">
-        <p class="service-num">01</p>
-        <h3>AI & Agentic Engineering</h3>
-        <div class="service-featured-body">
-          <p>Design and build LLM-powered tooling that engineers actually use — Slack-based AI agents with real integrations, CI/CD pipeline agents that gate and review code automatically, and agentic workflows orchestrated via MCP across your existing stack.</p>
-          <p>Experienced leading AI tooling transitions at scale: security auditing, developer rollout, and custom observability dashboards to track usage and ROI across the organization.</p>
-        </div>
-        <div class="service-tags">
-          <span class="tag">MCP</span>
-          <span class="tag">LLM Orchestration</span>
-          <span class="tag">Claude / OpenAI</span>
-          <span class="tag">Agentic Workflows</span>
-          <span class="tag">Claude Code</span>
-          <span class="tag">Cursor</span>
-          <span class="tag">CI/CD Agents</span>
-          <span class="tag">ChatOps</span>
-          <span class="tag">Prompt Engineering</span>
-        </div>
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-label">Joe Swanson — Software Consulting</p>
+      <h1>One engineer.<br><strong>Full ownership.</strong><br>Software that <strong>ships.</strong></h1>
+      <p class="hero-sub">
+        Engineering teams bring me in when they need someone to own a hard problem — not coordinate it.
+        I embed directly, take accountability for outcomes, and ship. AI tooling, platform infrastructure, SRE.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get in touch</a>
+        <a href="#services" class="btn btn-ghost">What I do</a>
       </div>
+    </section>
 
-      <div class="services-grid">
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-inner">
+        <p class="section-label">Services</p>
 
-        <div class="service">
-          <p class="service-num">02</p>
-          <h3>Site Reliability Engineering</h3>
-          <p>SLI/SLO definition, observability pipelines, incident runbooks, and reliability standards for platforms that can't afford downtime. CI/CD, containerized deployments, and IaC built to be owned by your team.</p>
+        <div class="service-featured">
+          <p class="service-num">01</p>
+          <h3>AI & Agentic Engineering</h3>
+          <div class="service-featured-body">
+            <p>Design and build LLM-powered tooling that engineers actually use — Slack-based AI agents with real integrations, CI/CD pipeline agents that gate and review code automatically, and agentic workflows orchestrated via MCP across your existing stack.</p>
+            <p>Experienced leading AI tooling transitions at scale: security auditing, developer rollout, and custom observability dashboards to track usage and ROI across the organization.</p>
+          </div>
           <div class="service-tags">
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">AWS</span>
-            <span class="tag">GCP</span>
-            <span class="tag">Datadog</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">ArgoCD</span>
+            <span class="tag">MCP</span>
+            <span class="tag">LLM Orchestration</span>
+            <span class="tag">Claude / OpenAI</span>
+            <span class="tag">Agentic Workflows</span>
+            <span class="tag">Claude Code</span>
+            <span class="tag">Cursor</span>
+            <span class="tag">CI/CD Agents</span>
+            <span class="tag">ChatOps</span>
+            <span class="tag">Prompt Engineering</span>
           </div>
         </div>
 
-        <div class="service">
-          <p class="service-num">03</p>
-          <h3>Platform & Developer Experience</h3>
-          <p>Internal developer platforms, self-service infrastructure, and Golden Path templates that let teams ship without waiting on ops. Backstage, automated onboarding, and the tooling that collapses the gap between code and production.</p>
-          <div class="service-tags">
-            <span class="tag">Backstage</span>
-            <span class="tag">Go</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Self-service IaC</span>
-            <span class="tag">GitHub Actions</span>
+        <div class="services-grid">
+
+          <div class="service">
+            <p class="service-num">02</p>
+            <h3>Site Reliability Engineering</h3>
+            <p>SLI/SLO definition, observability pipelines, incident runbooks, and reliability standards for platforms that can't afford downtime. CI/CD, containerized deployments, and IaC built to be owned by your team.</p>
+            <div class="service-tags">
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">AWS</span>
+              <span class="tag">GCP</span>
+              <span class="tag">Datadog</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">ArgoCD</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <p class="service-num">03</p>
+            <h3>Platform & Developer Experience</h3>
+            <p>Internal developer platforms, self-service infrastructure, and Golden Path templates that let teams ship without waiting on ops. Backstage, automated onboarding, and the tooling that collapses the gap between code and production.</p>
+            <div class="service-tags">
+              <span class="tag">Backstage</span>
+              <span class="tag">Go</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Self-service IaC</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </div>
+
+          <div class="service">
+            <p class="service-num">04</p>
+            <h3>Automation & Integration</h3>
+            <p>SaaS API integrations, event-driven orchestration, identity and access automation — and custom microservices when off-the-shelf tools don't cut it. Built in Go or Python to be fast, testable, and maintainable.</p>
+            <div class="service-tags">
+              <span class="tag">REST APIs</span>
+              <span class="tag">OAuth 2.0</span>
+              <span class="tag">SAML</span>
+              <span class="tag">Go</span>
+              <span class="tag">Python</span>
+              <span class="tag">Serverless</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="section" id="approach">
+      <div class="section-inner">
+        <p class="section-label">Approach</p>
+        <div class="approach-grid">
+          <div class="approach-left">
+            <h2>You work with me.<br><strong>No account managers.</strong><br>No hand-offs.</h2>
+          </div>
+          <div class="approach-right">
+            <p>I'm Joe Swanson — a staff software engineer based in Bozeman, Montana. When you hire me, I'm the one doing the work. Every engagement is scoped honestly — if something isn't the right fit, I'll tell you.</p>
+            <p>I've been embedded across small teams, funded startups, and larger engineering orgs. I take ownership of outcomes, not just tasks — and I'm available for contract engagements on a project or retainer basis.</p>
+            <p>15 years of infrastructure and platform work, including hands-on agentic AI engineering in production — not just evaluating tools. MCP integrations, CI coding agents, and AI tooling rollouts at the org level.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="service">
-          <p class="service-num">04</p>
-          <h3>Automation & Integration</h3>
-          <p>SaaS API integrations, event-driven orchestration, identity and access automation — and custom microservices when off-the-shelf tools don't cut it. Built in Go or Python to be fast, testable, and maintainable.</p>
-          <div class="service-tags">
-            <span class="tag">REST APIs</span>
-            <span class="tag">OAuth 2.0</span>
-            <span class="tag">SAML</span>
-            <span class="tag">Go</span>
-            <span class="tag">Python</span>
-            <span class="tag">Serverless</span>
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="section-inner">
+        <p class="section-label">Work</p>
+
+        <div class="case-studies">
+
+          <div class="case-study">
+            <div>
+              <p class="case-label">AI & Platform Engineering — Enterprise SaaS</p>
+              <h3>DevX Agent — AI-Powered Engineering Platform</h3>
+              <p>Built a centralized Slack-based AI agent integrating six internal platforms via Model Context Protocol — GitLab, Atlassian, Grafana, Backstage, Datadog, and EKS. Engineers query infrastructure state, trigger workflows, and get real-time insights through a natural language interface. Also engineered CI/CD coding agents that perform automated code review and quality gating on every merge request, and led the company-wide transition from GitHub Copilot to Cursor and Claude Code.</p>
+            </div>
+            <div class="case-metrics">
+              <div class="metric">
+                <div class="metric-value">6 platforms</div>
+                <div class="metric-label">Integrated via MCP into a single natural language interface</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">Day one</div>
+                <div class="metric-label">New services ship with CI/CD, tests, and monitoring via Golden Path templates</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">Org-wide</div>
+                <div class="metric-label">AI tooling transition owned end-to-end — rollout, security audit, observability</div>
+              </div>
+            </div>
           </div>
+
         </div>
 
+        <p class="projects-header">Personal Projects</p>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <p class="project-meta">Live — GCP Cloud Run</p>
+            <h4>chomptron.com</h4>
+            <p>AI-powered recipe generator built on Google Gemini. Serverless on Cloud Run — scales to zero, deploys via Cloud Build CI/CD. Caching, retry logic, and health endpoints built in.</p>
+            <a href="https://chomptron.com" class="project-link" target="_blank" rel="noopener">chomptron.com →</a>
+          </div>
+
+          <div class="project-card">
+            <p class="project-meta">Live — Next.js / Firebase</p>
+            <h4>wrenchtron.com</h4>
+            <p>Fleet maintenance tracker with Firestore, Firebase Auth, and Cloud Storage. Full PWA with offline support. No server — Firestore security rules handle all access control. Demo available, no login required.</p>
+            <a href="https://wrenchtron.com/demo" class="project-link" target="_blank" rel="noopener">wrenchtron.com/demo →</a>
+          </div>
+
+          <div class="project-card">
+            <p class="project-meta">Live — DigitalOcean / React</p>
+            <h4>tronswan.com</h4>
+            <p>Personal platform hub integrating Spotify, weather, MLB stats, a Hugo blog, and a Google Docs-backed resume. 93%+ test coverage with Vitest and Playwright. 457 commits of active development.</p>
+            <a href="https://tronswan.com" class="project-link" target="_blank" rel="noopener">tronswan.com →</a>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- APPROACH -->
-  <section class="section" id="approach">
-    <div class="section-inner">
-      <p class="section-label">Approach</p>
-      <div class="approach-grid">
-        <div class="approach-left">
-          <h2>You work with me.<br><strong>No account managers.</strong><br>No hand-offs.</h2>
-        </div>
-        <div class="approach-right">
-          <p>I'm Joe Swanson — a staff software engineer based in Bozeman, Montana. When you hire me, I'm the one doing the work. Every engagement is scoped honestly — if something isn't the right fit, I'll tell you.</p>
-          <p>I've been embedded across small teams, funded startups, and larger engineering orgs. I take ownership of outcomes, not just tasks — and I'm available for contract engagements on a project or retainer basis.</p>
-          <p>15 years of infrastructure and platform work, including hands-on agentic AI engineering in production — not just evaluating tools. MCP integrations, CI coding agents, and AI tooling rollouts at the org level.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="section" id="work">
-    <div class="section-inner">
-      <p class="section-label">Work</p>
-
-      <div class="case-studies">
-
-        <div class="case-study">
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <p class="section-label">Contact</p>
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2>Let's talk about<br><strong>what you're building.</strong></h2>
+            <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and I'll figure out if there's a fit.</p>
+            <a href="mailto:joe@swantron.com" class="btn">Get in touch</a>
+          </div>
           <div>
-            <p class="case-label">AI & Platform Engineering — Enterprise SaaS</p>
-            <h3>DevX Agent — AI-Powered Engineering Platform</h3>
-            <p>Built a centralized Slack-based AI agent integrating six internal platforms via Model Context Protocol — GitLab, Atlassian, Grafana, Backstage, Datadog, and EKS. Engineers query infrastructure state, trigger workflows, and get real-time insights through a natural language interface. Also engineered CI/CD coding agents that perform automated code review and quality gating on every merge request, and led the company-wide transition from GitHub Copilot to Cursor and Claude Code.</p>
-          </div>
-          <div class="case-metrics">
-            <div class="metric">
-              <div class="metric-value">6 platforms</div>
-              <div class="metric-label">Integrated via MCP into a single natural language interface</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">Day one</div>
-              <div class="metric-label">New services ship with CI/CD, tests, and monitoring via Golden Path templates</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">Org-wide</div>
-              <div class="metric-label">AI tooling transition owned end-to-end — rollout, security audit, observability</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="projects-header">Personal Projects</p>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <p class="project-meta">Live — GCP Cloud Run</p>
-          <h4>chomptron.com</h4>
-          <p>AI-powered recipe generator built on Google Gemini. Serverless on Cloud Run — scales to zero, deploys via Cloud Build CI/CD. Caching, retry logic, and health endpoints built in.</p>
-          <a href="https://chomptron.com" class="project-link" target="_blank" rel="noopener">chomptron.com →</a>
-        </div>
-
-        <div class="project-card">
-          <p class="project-meta">Live — Next.js / Firebase</p>
-          <h4>wrenchtron.com</h4>
-          <p>Fleet maintenance tracker with Firestore, Firebase Auth, and Cloud Storage. Full PWA with offline support. No server — Firestore security rules handle all access control. Demo available, no login required.</p>
-          <a href="https://wrenchtron.com/demo" class="project-link" target="_blank" rel="noopener">wrenchtron.com/demo →</a>
-        </div>
-
-        <div class="project-card">
-          <p class="project-meta">Live — DigitalOcean / React</p>
-          <h4>tronswan.com</h4>
-          <p>Personal platform hub integrating Spotify, weather, MLB stats, a Hugo blog, and a Google Docs-backed resume. 93%+ test coverage with Vitest and Playwright. 457 commits of active development.</p>
-          <a href="https://tronswan.com" class="project-link" target="_blank" rel="noopener">tronswan.com →</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="section-inner">
-      <p class="section-label">Contact</p>
-      <div class="contact-grid">
-        <div class="contact-left">
-          <h2>Let's talk about<br><strong>what you're building.</strong></h2>
-          <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and I'll figure out if there's a fit.</p>
-          <a href="mailto:joe@swantron.com" class="btn">Get in touch</a>
-        </div>
-        <div>
-          <div class="contact-detail">
-            <span>Email</span>
-            <a href="mailto:joe@swantron.com">joe@swantron.com</a>
-          </div>
-          <div class="contact-detail" style="margin-top: 1.5rem;">
-            <span>Location</span>
-            Bozeman, Montana — Remote Available
-          </div>
-          <div class="contact-detail" style="margin-top: 1.5rem;">
-            <span>Response time</span>
-            Within one business day
-          </div>
-          <div class="contact-detail" style="margin-top: 1.5rem;">
-            <span>LinkedIn</span>
-            <a href="https://www.linkedin.com/in/joseph-swanson-11092758/" target="_blank" rel="noopener">linkedin.com/in/joseph-swanson</a>
-          </div>
-          <div class="contact-detail" style="margin-top: 1.5rem;">
-            <span>GitHub</span>
-            <a href="https://github.com/swantron" target="_blank" rel="noopener">github.com/swantron</a>
+            <dl class="contact-details">
+              <div class="contact-detail">
+                <dt>Email</dt>
+                <dd><a href="mailto:joe@swantron.com">joe@swantron.com</a></dd>
+              </div>
+              <div class="contact-detail">
+                <dt>Location</dt>
+                <dd>Bozeman, Montana — Remote Available</dd>
+              </div>
+              <div class="contact-detail">
+                <dt>Response time</dt>
+                <dd>Within one business day</dd>
+              </div>
+              <div class="contact-detail">
+                <dt>LinkedIn</dt>
+                <dd><a href="https://www.linkedin.com/in/joseph-swanson-11092758/" target="_blank" rel="noopener">linkedin.com/in/joseph-swanson</a></dd>
+              </div>
+              <div class="contact-detail">
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/swantron" target="_blank" rel="noopener">github.com/swantron</a></dd>
+              </div>
+            </dl>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
