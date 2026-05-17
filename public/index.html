@@ -8,6 +8,11 @@
   <link rel="canonical" href="https://mt.services">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
+  <!-- Web font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mt.services">
@@ -53,6 +58,11 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
     :root {
       --black:  #1a1a1a;
       --gray:   #636e72;
@@ -61,10 +71,16 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #fff;
       color: var(--black);
       line-height: 1.6;
+    }
+
+    /* ── FOCUS ── */
+    :focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 3px;
     }
 
     /* ── SKIP LINK ── */
@@ -85,6 +101,12 @@
 
     /* ── NAV ── */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -129,7 +151,7 @@
     .hero-label {
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gray);
       margin-bottom: 1.5rem;
@@ -171,15 +193,24 @@
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      transition: opacity 0.2s;
+      transition: opacity 0.2s, transform 0.15s;
     }
 
-    .btn:hover { opacity: 0.75; }
+    .btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
 
     .btn-ghost {
       background: transparent;
       color: var(--black);
       border: 1px solid var(--black);
+    }
+
+    .btn-ghost:hover {
+      background: var(--black);
+      color: #fff;
+      opacity: 1;
     }
 
     /* ── SECTION WRAPPER ── */
@@ -196,7 +227,7 @@
     .section-label {
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gray);
       margin-bottom: 3rem;
@@ -334,11 +365,16 @@
       grid-template-columns: 1fr 1fr;
       gap: 2.5rem;
       align-items: start;
+      transition: box-shadow 0.2s;
+    }
+
+    .case-study:hover {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     }
 
     .case-label {
       font-size: 0.7rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gray);
       margin-bottom: 0.75rem;
@@ -383,7 +419,7 @@
     .projects-header {
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gray);
       margin-top: 3rem;
@@ -400,13 +436,16 @@
     .project-card {
       padding: 1.75rem;
       border-right: 1px solid var(--border);
+      transition: background 0.2s;
     }
+
+    .project-card:hover { background: var(--light); }
 
     .project-card:last-child { border-right: none; }
 
     .project-meta {
       font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gray);
       margin-bottom: 0.6rem;
@@ -434,7 +473,7 @@
       transition: opacity 0.2s;
     }
 
-    .project-link:hover { opacity: 0.5; }
+    .project-link:hover { opacity: 0.65; }
 
     /* ── CONTACT ── */
     .contact-grid {
