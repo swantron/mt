@@ -428,7 +428,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 0;
       border: 1px solid var(--border);
     }
@@ -436,12 +436,16 @@
     .project-card {
       padding: 1.75rem;
       border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       transition: background 0.2s;
     }
 
     .project-card:hover { background: var(--light); }
 
-    .project-card:last-child { border-right: none; }
+    .project-card:nth-child(2n) { border-right: none; }
+
+    .project-card:nth-last-child(-n+2):nth-child(odd),
+    .project-card:last-child { border-bottom: none; }
 
     .project-meta {
       font-size: 0.7rem;
@@ -769,6 +773,13 @@
 
         <p class="projects-header">Personal Projects</p>
         <div class="projects-grid">
+
+          <div class="project-card">
+            <p class="project-meta">Live — Next.js / Firebase</p>
+            <h4>drivetron.app</h4>
+            <p>Supervised driving log for teen drivers, with every US state's practice-hour rules built in. Offline-first PWA the whole family shares, parent sign-off enforced by Firestore security rules, and a printable log for the DMV.</p>
+            <a href="https://drivetron.app" class="project-link" target="_blank" rel="noopener">drivetron.app →</a>
+          </div>
 
           <div class="project-card">
             <p class="project-meta">Live — GCP Cloud Run</p>
