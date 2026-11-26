@@ -3,37 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MT.SERVICES — SRE & Platform Engineering Consulting</title>
-  <meta name="description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
+  <title>MT.SERVICES — Engineering projects and retainers</title>
+  <meta name="description" content="Joe Swanson takes scoped engineering projects and retainers. AI tooling, platform infrastructure, and site reliability. Bozeman, Montana — remote.">
   <link rel="canonical" href="https://mt.services">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1a1a1a">
 
-  <!-- Web font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mt.services">
-  <meta property="og:title" content="MT.SERVICES — SRE & Platform Engineering Consulting">
-  <meta property="og:description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
+  <meta property="og:title" content="MT.SERVICES — Engineering projects and retainers">
+  <meta property="og:description" content="Joe Swanson takes scoped engineering projects and retainers. AI tooling, platform infrastructure, and site reliability. Bozeman, Montana — remote.">
   <meta property="og:image" content="https://mt.services/logo-400.png">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MT.SERVICES — SRE & Platform Engineering Consulting">
-  <meta name="twitter:description" content="Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.">
+  <meta name="twitter:title" content="MT.SERVICES — Engineering projects and retainers">
+  <meta name="twitter:description" content="Joe Swanson takes scoped engineering projects and retainers. AI tooling, platform infrastructure, and site reliability. Bozeman, Montana — remote.">
   <meta name="twitter:image" content="https://mt.services/logo-400.png">
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "MT.SERVICES",
-    "description": "Montana-based software consulting. Agentic AI engineering, SRE, developer experience platforms, and cloud infrastructure.",
+    "description": "Scoped engineering projects and retainers. AI tooling, platform infrastructure, and site reliability. Based in Bozeman, Montana.",
     "url": "https://mt.services",
+    "image": "https://mt.services/logo-400.png",
     "founder": {
       "@type": "Person",
       "name": "Joe Swanson",
@@ -51,7 +49,24 @@
       "addressCountry": "US"
     },
     "areaServed": "Worldwide",
-    "serviceType": ["AI Engineering", "Site Reliability Engineering", "Platform Engineering", "Developer Experience"]
+    "serviceType": ["AI Engineering", "Site Reliability Engineering", "Platform Engineering", "Developer Experience"],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Project",
+        "description": "A defined outcome. Scoped, built, and handed off running."
+      },
+      {
+        "@type": "Offer",
+        "name": "Retainer",
+        "description": "Embedded ownership of AI tooling, platform, or reliability."
+      },
+      {
+        "@type": "Offer",
+        "name": "Advisory",
+        "description": "A short pass: architecture, an AI rollout, or a second opinion before a build."
+      }
+    ]
   }
   </script>
 
@@ -60,30 +75,31 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 5rem;
+      scroll-padding-top: 7.5rem;
     }
 
     :root {
       --black:  #1a1a1a;
-      --gray:   #636e72;
-      --light:  #f5f5f3;
+      --gray:   #5c6568;
+      --light:  #f4f4f1;
       --border: #e0e0dc;
+      --sans:   'Outfit', 'Avenir Next', 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: var(--sans);
+      font-weight: 400;
       background: #fff;
       color: var(--black);
-      line-height: 1.6;
+      line-height: 1.55;
+      letter-spacing: -0.011em;
     }
 
-    /* ── FOCUS ── */
     :focus-visible {
       outline: 2px solid var(--black);
       outline-offset: 3px;
     }
 
-    /* ── SKIP LINK ── */
     .skip-link {
       position: absolute;
       top: -100%;
@@ -94,12 +110,10 @@
       font-size: 0.85rem;
       text-decoration: none;
       z-index: 100;
-      transition: top 0.1s;
     }
 
     .skip-link:focus { top: 1rem; }
 
-    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
@@ -110,71 +124,113 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.5rem 2rem;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
       border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
       text-decoration: none;
-      display: flex;
-      align-items: center;
+      color: var(--black);
+      flex-shrink: 0;
     }
 
-    .nav-logo img {
-      height: 32px;
-      width: auto;
+    .wordmark {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      line-height: 1;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1.5rem;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      font-weight: 500;
       color: var(--gray);
       text-decoration: none;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.01em;
       transition: color 0.2s;
     }
 
     .nav-links a:hover { color: var(--black); }
 
-    /* ── HERO ── */
     .hero {
-      max-width: 860px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 5rem 2rem;
+      padding: 4.5rem 2rem 3.5rem;
+    }
+
+    .hero-mark {
+      width: min(280px, 72vw);
+      height: auto;
+      display: block;
+      margin-bottom: 2.25rem;
     }
 
     .hero-label {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gray);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 300;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.75rem;
-      color: var(--black);
+      font-size: clamp(2.35rem, 5.4vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.5rem;
+      max-width: 16ch;
     }
 
-    .hero h1 strong {
-      font-weight: 600;
-    }
+    .hero h1 strong { font-weight: 700; }
 
     .hero-sub {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      font-weight: 400;
       color: var(--gray);
-      max-width: 580px;
-      margin-bottom: 2.5rem;
+      max-width: 38rem;
+      margin-bottom: 2.25rem;
+      line-height: 1.5;
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.25rem;
+    }
+
+    .overview article {
+      padding: 1.25rem 1.25rem 1.35rem 0;
+    }
+
+    .overview article + article {
+      padding-left: 1.25rem;
+      border-left: 1px solid var(--border);
+    }
+
+    .overview h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .overview p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.45;
     }
 
     .hero-cta {
@@ -185,14 +241,13 @@
 
     .btn {
       display: inline-block;
-      padding: 0.85rem 2rem;
+      padding: 0.8rem 1.35rem;
       background: var(--black);
       color: #fff;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: -0.01em;
       transition: opacity 0.2s, transform 0.15s;
     }
 
@@ -213,118 +268,86 @@
       opacity: 1;
     }
 
-    /* ── SECTION WRAPPER ── */
     .section {
       border-top: 1px solid var(--border);
-      padding: 5rem 2rem;
+      padding: 4.5rem 2rem;
     }
 
     .section-inner {
-      max-width: 860px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gray);
-      margin-bottom: 3rem;
+      margin-bottom: 0.75rem;
     }
 
-    /* ── SERVICES ── */
-    .service-featured {
-      background: var(--light);
-      padding: 2.5rem;
-      margin-bottom: 0;
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 40rem;
+      margin-bottom: 2.25rem;
+      line-height: 1.5;
+    }
+
+    .engagements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .engagement {
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem 1.6rem 1.6rem;
+      border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
-    .service-featured .service-num {
-      font-size: 0.75rem;
+    .engagement-num {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       color: var(--gray);
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
 
-    .service-featured h3 {
+    .engagement h3 {
       font-size: 1.2rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.65rem;
     }
 
-    .service-featured p {
-      font-size: 0.9rem;
+    .engagement p {
+      font-size: 0.95rem;
       color: var(--gray);
-      line-height: 1.65;
-      margin-bottom: 1.25rem;
-    }
-
-    .service-featured-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-featured-body p {
-      margin-bottom: 0;
-    }
-
-    .service-featured .service-tags {
-      margin-top: 0;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0;
-    }
-
-    .service {
-      padding: 2rem 2rem 2rem 0;
-      border-right: 1px solid var(--border);
-    }
-
-    .service:last-child { border-right: none; }
-
-    .service-num {
-      font-size: 0.75rem;
-      color: var(--gray);
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-
-    .service h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    .service p {
-      font-size: 0.9rem;
-      color: var(--gray);
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
     .service-tags {
-      margin-top: 1.25rem;
+      margin-top: auto;
+      padding-top: 1.25rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
     }
 
     .tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
       color: var(--gray);
       border: 1px solid var(--border);
-      padding: 0.25rem 0.6rem;
+      padding: 0.2rem 0.5rem;
     }
 
-    /* ── APPROACH ── */
     .approach-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -333,108 +356,130 @@
     }
 
     .approach-left h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 300;
-      line-height: 1.3;
-      letter-spacing: -0.01em;
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
     }
 
-    .approach-left h2 strong { font-weight: 600; }
-
-    .approach-right {
-      padding-top: 0.25rem;
-    }
+    .approach-left h2 strong { font-weight: 700; }
 
     .approach-right p {
       color: var(--gray);
-      margin-bottom: 1.25rem;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
-    /* ── WORK / CASE STUDY ── */
-    .case-studies {
+    .approach-right > p { margin-top: 0.25rem; }
+
+    .steps p { margin: 0; }
+
+    .steps {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.15rem;
+      margin-bottom: 1.5rem;
     }
 
-    .case-study {
-      background: var(--light);
-      padding: 2.5rem;
+    .steps li {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
-      transition: box-shadow 0.2s;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.75rem;
     }
 
-    .case-study:hover {
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    .case-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 0.75rem;
-    }
-
-    .case-study h3 {
-      font-size: 1.2rem;
+    .steps strong {
+      display: block;
+      color: var(--black);
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.15rem;
     }
 
-    .case-study p {
-      font-size: 0.9rem;
+    .step-num {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       color: var(--gray);
-      line-height: 1.65;
+      padding-top: 0.2rem;
     }
 
-    .case-metrics {
+    .case-studies {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
     }
 
-    .metric {
-      border-left: 2px solid var(--black);
-      padding-left: 1rem;
+    .case-study {
+      background: var(--light);
+      padding: 2rem 2rem 1.85rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.25rem;
+      align-items: start;
     }
 
-    .metric-value {
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-    }
-
-    .metric-label {
-      font-size: 0.75rem;
-      color: var(--gray);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── PERSONAL PROJECTS ── */
-    .projects-header {
+    .case-label {
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 0.65rem;
+    }
+
+    .case-study h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.65rem;
+    }
+
+    .case-study p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+
+    .delivered {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .delivered li {
+      border-left: 2px solid var(--black);
+      padding-left: 0.9rem;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .projects-header {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gray);
       margin-top: 3rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .projects-lead {
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 40rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
     }
 
     .project-card {
-      padding: 1.75rem;
+      padding: 1.6rem 1.5rem 1.45rem;
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       transition: background 0.2s;
@@ -442,131 +487,126 @@
 
     .project-card:hover { background: var(--light); }
 
-    .project-card:nth-child(2n) { border-right: none; }
-
-    .project-card:nth-last-child(-n+2):nth-child(odd),
-    .project-card:last-child { border-bottom: none; }
-
     .project-meta {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--gray);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .project-card h4 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 600;
-      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.45rem;
     }
 
     .project-card p {
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       color: var(--gray);
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
     }
 
     .project-link {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
       color: var(--black);
       text-decoration: none;
       border-bottom: 1px solid var(--black);
-      letter-spacing: 0.03em;
-      transition: opacity 0.2s;
     }
 
     .project-link:hover { opacity: 0.65; }
 
-    /* ── CONTACT ── */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 4rem;
       align-items: start;
     }
 
     .contact-left h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 300;
-      line-height: 1.3;
-      letter-spacing: -0.01em;
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
 
-    .contact-left h2 strong { font-weight: 600; }
+    .contact-left h2 strong { font-weight: 700; }
 
     .contact-left p {
       color: var(--gray);
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
+      font-size: 1.02rem;
+      margin-bottom: 1.75rem;
+      max-width: 34rem;
     }
 
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-detail {
-      font-size: 0.9rem;
-    }
-
-    .contact-detail + .contact-detail {
-      margin-top: 1.5rem;
-    }
+    .contact-detail + .contact-detail { margin-top: 1.35rem; }
 
     .contact-detail dt {
       color: var(--gray);
       font-size: 0.75rem;
-      letter-spacing: 0.1em;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
     }
 
-    .contact-detail dd {
-      margin: 0;
-    }
+    .contact-detail dd { margin: 0; font-size: 1rem; }
 
     .contact-detail a {
       color: var(--black);
       text-decoration: none;
       border-bottom: 1px solid var(--black);
-      transition: opacity 0.2s;
     }
 
     .contact-detail a:hover { opacity: 0.6; }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 1.5rem 2rem;
+      padding: 1.35rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     footer p {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--gray);
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      nav { padding: 1.25rem 1.25rem; }
-      .nav-links { gap: 1.25rem; }
-      .hero { padding: 3.5rem 1.25rem 3rem; }
-      .section { padding: 3.5rem 1.25rem; }
-      .service-featured-body { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .service { border-right: none; border-bottom: 1px solid var(--border); padding: 1.75rem 0; }
-      .approach-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .case-study { grid-template-columns: 1fr; }
+    @media (max-width: 720px) {
+      nav {
+        flex-wrap: wrap;
+        padding: 0.75rem 1.1rem 0.7rem;
+      }
+      .wordmark { font-size: 0.82rem; letter-spacing: 0.06em; }
+      .nav-links {
+        flex: 1 0 100%;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding-top: 0.55rem;
+      }
+      .nav-links a { font-size: 0.85rem; }
+      .hero { padding: 2.75rem 1.25rem 2.5rem; }
+      .section { padding: 3.25rem 1.25rem; }
+      .overview { grid-template-columns: 1fr; }
+      .overview article { padding: 1rem 0; }
+      .overview article + article {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--border);
+      }
+      .engagements { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .case-study { grid-template-columns: 1fr; gap: 1.5rem; }
       .projects-grid { grid-template-columns: 1fr; }
-      .project-card { border-right: none; border-bottom: 1px solid var(--border); }
-      .project-card:last-child { border-bottom: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      footer { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -574,17 +614,11 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- NAV -->
   <nav aria-label="Main navigation">
-    <a href="/" class="nav-logo">
-      <picture>
-        <source srcset="logo.webp" type="image/webp">
-        <img src="logo-400.png" alt="MT.SERVICES" height="32">
-      </picture>
-    </a>
+    <a href="/" class="nav-logo"><span class="wordmark">MT.SERVICES</span></a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#approach">Approach</a></li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#engagements">Engagements</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -592,51 +626,59 @@
 
   <main id="main-content">
 
-    <!-- HERO -->
-    <section class="hero">
-      <p class="hero-label">Joe Swanson — Software Consulting</p>
-      <h1>One engineer.<br><strong>Full ownership.</strong><br>Software that <strong>ships.</strong></h1>
+    <section class="hero" id="overview">
+      <img class="hero-mark" src="logo.webp" alt="MT.SERVICES, set inside an outline of Montana" width="400" height="218">
+      <p class="hero-label">Joe Swanson · Bozeman, Montana</p>
+      <h1>Projects and retainers. <strong>One engineer</strong> does the work.</h1>
       <p class="hero-sub">
-        Engineering teams bring me in when they need someone to own a hard problem — not coordinate it.
-        I embed directly, take accountability for outcomes, and ship. AI tooling, platform infrastructure, SRE.
+        I take a scoped problem in AI tooling, platform infrastructure, or reliability and own it through production. You hire the person who builds it. No account manager, no handoff to someone else.
       </p>
+
+      <div class="overview">
+        <article>
+          <h2>Project</h2>
+          <p>A defined outcome. I scope it, build it, and hand it over running — docs included, your team can operate it.</p>
+        </article>
+        <article>
+          <h2>Retainer</h2>
+          <p>Embedded with your team. Ongoing ownership of the system, shipping on your cadence, still just me.</p>
+        </article>
+        <article>
+          <h2>Advisory</h2>
+          <p>A short pass before you commit: architecture, an AI rollout, or a second opinion on a build.</p>
+        </article>
+      </div>
+
       <div class="hero-cta">
-        <a href="#contact" class="btn">Get in touch</a>
-        <a href="#services" class="btn btn-ghost">What I do</a>
+        <a href="#contact" class="btn">Start a project</a>
+        <a href="#work" class="btn btn-ghost">See the work</a>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services">
+    <section class="section" id="engagements">
       <div class="section-inner">
-        <p class="section-label">Services</p>
+        <p class="section-label">Engagements</p>
+        <p class="section-lead">Same subjects, hired as a project or a retainer. If the fit is wrong, I’ll say so before we start.</p>
 
-        <div class="service-featured">
-          <p class="service-num">01</p>
-          <h3>AI & Agentic Engineering</h3>
-          <div class="service-featured-body">
-            <p>Design and build LLM-powered tooling that engineers actually use — Slack-based AI agents with real integrations, CI/CD pipeline agents that gate and review code automatically, and agentic workflows orchestrated via MCP across your existing stack.</p>
-            <p>Experienced leading AI tooling transitions at scale: security auditing, developer rollout, and custom observability dashboards to track usage and ROI across the organization.</p>
-          </div>
-          <div class="service-tags">
-            <span class="tag">MCP</span>
-            <span class="tag">LLM Orchestration</span>
-            <span class="tag">Claude / OpenAI</span>
-            <span class="tag">Agentic Workflows</span>
-            <span class="tag">Claude Code</span>
-            <span class="tag">Cursor</span>
-            <span class="tag">CI/CD Agents</span>
-            <span class="tag">ChatOps</span>
-            <span class="tag">Prompt Engineering</span>
-          </div>
-        </div>
+        <div class="engagements">
+          <article class="engagement">
+            <p class="engagement-num">01 · Project or retainer</p>
+            <h3>AI and agentic engineering</h3>
+            <p>LLM tooling engineers actually use. Slack agents with real integrations, CI agents that review and gate changes, and workflows over the tools you already run. Includes the rollout: security review, developer adoption, and dashboards for usage.</p>
+            <div class="service-tags">
+              <span class="tag">MCP</span>
+              <span class="tag">Claude</span>
+              <span class="tag">OpenAI</span>
+              <span class="tag">Cursor</span>
+              <span class="tag">CI agents</span>
+              <span class="tag">ChatOps</span>
+            </div>
+          </article>
 
-        <div class="services-grid">
-
-          <div class="service">
-            <p class="service-num">02</p>
-            <h3>Site Reliability Engineering</h3>
-            <p>SLI/SLO definition, observability pipelines, incident runbooks, and reliability standards for platforms that can't afford downtime. CI/CD, containerized deployments, and IaC built to be owned by your team.</p>
+          <article class="engagement">
+            <p class="engagement-num">02 · Project or retainer</p>
+            <h3>Site reliability</h3>
+            <p>SLIs and SLOs, observability, incident runbooks, and a deploy path your team can own. CI/CD, containers, and infrastructure as code — built so on-call isn’t a single person forever.</p>
             <div class="service-tags">
               <span class="tag">Kubernetes</span>
               <span class="tag">Terraform</span>
@@ -644,177 +686,168 @@
               <span class="tag">GCP</span>
               <span class="tag">Datadog</span>
               <span class="tag">Grafana</span>
-              <span class="tag">ArgoCD</span>
+              <span class="tag">Argo CD</span>
             </div>
-          </div>
+          </article>
 
-          <div class="service">
-            <p class="service-num">03</p>
-            <h3>Platform & Developer Experience</h3>
-            <p>Internal developer platforms, self-service infrastructure, and Golden Path templates that let teams ship without waiting on ops. Backstage, automated onboarding, and the tooling that collapses the gap between code and production.</p>
+          <article class="engagement">
+            <p class="engagement-num">03 · Project or retainer</p>
+            <h3>Platform and developer experience</h3>
+            <p>Internal platforms, self-service infrastructure, and golden-path templates so a new service starts with CI, tests, and monitoring. The gap between a repo and production gets smaller on purpose.</p>
             <div class="service-tags">
               <span class="tag">Backstage</span>
               <span class="tag">Go</span>
               <span class="tag">TypeScript</span>
-              <span class="tag">Self-service IaC</span>
               <span class="tag">GitHub Actions</span>
             </div>
-          </div>
+          </article>
 
-          <div class="service">
-            <p class="service-num">04</p>
-            <h3>Automation & Integration</h3>
-            <p>SaaS API integrations, event-driven orchestration, identity and access automation — and custom microservices when off-the-shelf tools don't cut it. Built in Go or Python to be fast, testable, and maintainable.</p>
+          <article class="engagement">
+            <p class="engagement-num">04 · Project</p>
+            <h3>Automation and integration</h3>
+            <p>SaaS APIs, event-driven jobs, and identity automation — plus a small service when the off-the-shelf tool doesn’t fit. Go or Python, tested, and small enough to hand off.</p>
             <div class="service-tags">
-              <span class="tag">REST APIs</span>
-              <span class="tag">OAuth 2.0</span>
+              <span class="tag">REST</span>
+              <span class="tag">OAuth</span>
               <span class="tag">SAML</span>
               <span class="tag">Go</span>
               <span class="tag">Python</span>
-              <span class="tag">Serverless</span>
             </div>
-          </div>
-
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- APPROACH -->
     <section class="section" id="approach">
       <div class="section-inner">
-        <p class="section-label">Approach</p>
+        <p class="section-label">How it runs</p>
         <div class="approach-grid">
           <div class="approach-left">
             <h2>You work with me.<br><strong>No account managers.</strong><br>No hand-offs.</h2>
           </div>
           <div class="approach-right">
-            <p>I'm Joe Swanson — a staff software engineer based in Bozeman, Montana. When you hire me, I'm the one doing the work. Every engagement is scoped honestly — if something isn't the right fit, I'll tell you.</p>
-            <p>I've been embedded across small teams, funded startups, and larger engineering orgs. I take ownership of outcomes, not just tasks — and I'm available for contract engagements on a project or retainer basis.</p>
-            <p>15 years of infrastructure and platform work, including a decade of production on-call responsibility. Hands-on agentic AI engineering in production — not just evaluating tools. MCP integrations, CI coding agents, and AI tooling rollouts at the org level.</p>
+            <ol class="steps">
+              <li>
+                <span class="step-num">01</span>
+                <div>
+                  <strong>Scope</strong>
+                  <p>We write down the outcome, the constraints, and what done means. If I’m the wrong person, I’ll tell you here.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">02</span>
+                <div>
+                  <strong>Build</strong>
+                  <p>I do the work. You see the system moving, not a status report about a status report.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-num">03</span>
+                <div>
+                  <strong>Leave it running</strong>
+                  <p>Docs, ownership, and a handoff your team can operate. Or I stay on retainer.</p>
+                </div>
+              </li>
+            </ol>
+            <p>I’m Joe Swanson, a staff software engineer in Bozeman. Fifteen years of infrastructure and platform work, including a decade of production on-call, and agentic tooling that’s in production — MCP integrations, CI coding agents, and org-wide AI rollouts.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WORK -->
     <section class="section" id="work">
       <div class="section-inner">
         <p class="section-label">Work</p>
+        <p class="section-lead">Production systems, not proposals. The first three were embedded with a team. The products under them are ones I design, ship, and still operate.</p>
 
         <div class="case-studies">
 
-          <div class="case-study">
+          <article class="case-study">
             <div>
-              <p class="case-label">AI & Platform Engineering — Enterprise SaaS</p>
-              <h3>DevX Agent — AI-Powered Engineering Platform</h3>
-              <p>Built a centralized Slack-based AI agent integrating six internal platforms via Model Context Protocol — GitLab, Atlassian, Grafana, Backstage, Datadog, and EKS. Engineers query infrastructure state, trigger workflows, and get real-time insights through a natural language interface. Also engineered CI/CD coding agents that perform automated code review and quality gating on every merge request, and led the company-wide transition from GitHub Copilot to Cursor and Claude Code.</p>
+              <p class="case-label">Embedded · Enterprise SaaS</p>
+              <h3>DevX agent</h3>
+              <p>A Slack agent for an engineering org, plus the CI and the company-wide AI tooling change around it. Engineers ask for infrastructure state and trigger workflows in plain language. A new service starts from a golden path instead of a blank repo.</p>
             </div>
-            <div class="case-metrics">
-              <div class="metric">
-                <div class="metric-value">6 platforms</div>
-                <div class="metric-label">Integrated via MCP into a single natural language interface</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">Day one</div>
-                <div class="metric-label">New services ship with CI/CD, tests, and monitoring via Golden Path templates</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">Org-wide</div>
-                <div class="metric-label">AI tooling transition owned end-to-end — rollout, security audit, observability</div>
-              </div>
-            </div>
-          </div>
+            <ul class="delivered">
+              <li>One agent over GitLab, Atlassian, Grafana, Backstage, Datadog, and EKS, via MCP</li>
+              <li>CI agents that review code and gate merge requests</li>
+              <li>Copilot to Cursor and Claude Code, including the security review and usage dashboards</li>
+              <li>Golden path: CI/CD, tests, and monitoring on day one</li>
+            </ul>
+          </article>
 
-          <div class="case-study">
+          <article class="case-study">
             <div>
-              <p class="case-label">AI Engineering — Enterprise SaaS</p>
-              <h3>Agentic Documentation Pipeline</h3>
-              <p>Built a two-stage AI documentation system that operates across the full development lifecycle. At the pull request level, the agent analyzes code changes and surfaces targeted doc update suggestions inline. At release tags, a holistic review job runs, generates updated agentic-ready documentation, and opens a PR for a single human reviewer — eliminating manual doc maintenance without removing oversight.</p>
+              <p class="case-label">Embedded · Enterprise SaaS</p>
+              <h3>Agentic documentation pipeline</h3>
+              <p>Docs that stay current across the development lifecycle without turning a human into a full-time editor. A person still approves. The agent does the writing.</p>
             </div>
-            <div class="case-metrics">
-              <div class="metric">
-                <div class="metric-value">Two-stage</div>
-                <div class="metric-label">PR-level suggestions plus tag-triggered holistic review</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">Always current</div>
-                <div class="metric-label">Agentic-ready documentation kept in sync with every release</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">Minimal HITL</div>
-                <div class="metric-label">Human reviews and approves — the agent writes</div>
-              </div>
-            </div>
-          </div>
+            <ul class="delivered">
+              <li>On each pull request, suggestions for the docs a change actually touches</li>
+              <li>On a release tag, a full pass that opens one pull request</li>
+              <li>Agent-ready docs kept in sync with what shipped</li>
+            </ul>
+          </article>
 
-          <div class="case-study">
+          <article class="case-study">
             <div>
-              <p class="case-label">Backend & Infrastructure Engineering — Venture-Backed Healthcare Startup</p>
-              <h3>Founding Platform Infrastructure</h3>
-              <p>One of five engineers on the founding technical team building a healthcare AI platform from the ground up. Designed and implemented Go microservices for core platform functionality, authored GitHub Actions CI/CD pipelines, and consolidated database migrations into a unified, maintainable schema strategy.</p>
+              <p class="case-label">Founding team · Healthcare startup</p>
+              <h3>Platform infrastructure</h3>
+              <p>One of five engineers on the founding team of a healthcare AI platform. Core services, the pipeline, and the schema strategy, from nothing to production.</p>
             </div>
-            <div class="case-metrics">
-              <div class="metric">
-                <div class="metric-value">Founding team</div>
-                <div class="metric-label">One of five engineers on the initial platform buildout</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">Go microservices</div>
-                <div class="metric-label">Core platform services designed and shipped for production</div>
-              </div>
-              <div class="metric">
-                <div class="metric-value">Zero to prod</div>
-                <div class="metric-label">CI/CD pipelines and schema strategy built from scratch</div>
-              </div>
-            </div>
-          </div>
+            <ul class="delivered">
+              <li>Go microservices for core platform functionality</li>
+              <li>GitHub Actions pipelines authored from scratch</li>
+              <li>Database migrations consolidated into one schema strategy</li>
+            </ul>
+          </article>
 
         </div>
 
-        <p class="projects-header">Personal Projects</p>
+        <p class="projects-header">In production</p>
+        <p class="projects-lead">Products I run the same way I’d run a client project: live, monitored, and maintained.</p>
         <div class="projects-grid">
 
-          <div class="project-card">
-            <p class="project-meta">Live — Next.js / Firebase</p>
+          <article class="project-card">
+            <p class="project-meta">Live · Next.js / Firebase</p>
             <h4>drivetron.app</h4>
-            <p>Supervised driving log for teen drivers, with every US state's practice-hour rules built in. Offline-first PWA the whole family shares, parent sign-off enforced by Firestore security rules, and a printable log for the DMV.</p>
-            <a href="https://drivetron.app" class="project-link" target="_blank" rel="noopener">drivetron.app →</a>
-          </div>
+            <p>Supervised driving log for teen drivers, with every US state’s practice-hour rules. Offline-first PWA the family shares, parent sign-off in Firestore rules, and a printable log for the DMV.</p>
+            <a href="https://drivetron.app" class="project-link" target="_blank" rel="noopener">drivetron.app</a>
+          </article>
 
-          <div class="project-card">
-            <p class="project-meta">Live — GCP Cloud Run</p>
+          <article class="project-card">
+            <p class="project-meta">Live · GCP Cloud Run</p>
             <h4>chomptron.com</h4>
-            <p>AI-powered recipe generator built on Google Gemini. Serverless on Cloud Run — scales to zero, deploys via Cloud Build CI/CD. Caching, retry logic, and health endpoints built in.</p>
-            <a href="https://chomptron.com" class="project-link" target="_blank" rel="noopener">chomptron.com →</a>
-          </div>
+            <p>Recipe generator on Gemini. Serverless on Cloud Run — scales to zero, deploys through Cloud Build. Caching, retries, and health checks included.</p>
+            <a href="https://chomptron.com" class="project-link" target="_blank" rel="noopener">chomptron.com</a>
+          </article>
 
-          <div class="project-card">
-            <p class="project-meta">Live — Next.js / Firebase</p>
+          <article class="project-card">
+            <p class="project-meta">Live · Next.js / Firebase</p>
             <h4>wrenchtron.com</h4>
-            <p>Fleet maintenance tracker with Firestore, Firebase Auth, and Cloud Storage. Full PWA with offline support. No server — Firestore security rules handle all access control. Demo available, no login required.</p>
-            <a href="https://wrenchtron.com/demo" class="project-link" target="_blank" rel="noopener">wrenchtron.com/demo →</a>
-          </div>
+            <p>Fleet maintenance tracker. Firestore, Firebase Auth, and Cloud Storage. A PWA with offline support. Security rules are the access control. Demo, no login.</p>
+            <a href="https://wrenchtron.com/demo" class="project-link" target="_blank" rel="noopener">wrenchtron.com/demo</a>
+          </article>
 
-          <div class="project-card">
-            <p class="project-meta">Live — DigitalOcean / React</p>
+          <article class="project-card">
+            <p class="project-meta">Live · DigitalOcean / React</p>
             <h4>tronswan.com</h4>
-            <p>Personal platform hub integrating Spotify, weather, MLB stats, a Hugo blog, and a Google Docs-backed resume. 93%+ test coverage with Vitest and Playwright. 457 commits of active development.</p>
-            <a href="https://tronswan.com" class="project-link" target="_blank" rel="noopener">tronswan.com →</a>
-          </div>
+            <p>Personal platform: Spotify, weather, MLB, a Hugo blog, and a Google Docs resume. Vitest and Playwright, kept under active development.</p>
+            <a href="https://tronswan.com" class="project-link" target="_blank" rel="noopener">tronswan.com</a>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="section-inner">
         <p class="section-label">Contact</p>
         <div class="contact-grid">
           <div class="contact-left">
-            <h2>Let's talk about<br><strong>what you're building.</strong></h2>
-            <p>Whether you need AI tooling built into your engineering workflow, an SRE embedded with your platform team, or a second opinion on an architecture decision — reach out and I'll figure out if there's a fit.</p>
-            <a href="mailto:joe@swantron.com" class="btn">Get in touch</a>
+            <h2>Start with the problem<br>and the <strong>window.</strong></h2>
+            <p>Send what you need built and when. I’ll tell you if it should be a project, a retainer, or a short advisory pass — or if I’m the wrong person.</p>
+            <a href="mailto:joe@swantron.com" class="btn">joe@swantron.com</a>
           </div>
           <div>
             <dl class="contact-details">
@@ -824,19 +857,19 @@
               </div>
               <div class="contact-detail">
                 <dt>Location</dt>
-                <dd>Bozeman, Montana — Remote Available</dd>
+                <dd>Bozeman, Montana — remote</dd>
               </div>
               <div class="contact-detail">
-                <dt>Response time</dt>
+                <dt>Response</dt>
                 <dd>Within one business day</dd>
               </div>
               <div class="contact-detail">
                 <dt>LinkedIn</dt>
-                <dd><a href="https://www.linkedin.com/in/joseph-swanson-11092758/" target="_blank" rel="noopener">linkedin.com/in/joseph-swanson</a></dd>
+                <dd><a href="https://www.linkedin.com/in/joseph-swanson-11092758/" target="_blank" rel="noopener">joseph-swanson</a></dd>
               </div>
               <div class="contact-detail">
                 <dt>GitHub</dt>
-                <dd><a href="https://github.com/swantron" target="_blank" rel="noopener">github.com/swantron</a></dd>
+                <dd><a href="https://github.com/swantron" target="_blank" rel="noopener">swantron</a></dd>
               </div>
             </dl>
           </div>
@@ -846,7 +879,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2026 MT.SERVICES</p>
     <p>Bozeman, Montana</p>
